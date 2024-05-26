@@ -1,0 +1,12 @@
+import inquirer from 'inquirer'
+let counter = await inquirer.prompt({
+    type: 'input',
+    name: 'words',
+    message: 'How much sentence do you want to generate?'
+})
+function wordCounter(sentence: string) {
+  const wordCount = sentence.trim().split(/\s+/).length;
+  const characterCount = sentence.trim().length;
+  console.log(`Your sentence has ${characterCount} characters and ${wordCount} words.`);
+}
+wordCounter(counter.words);
